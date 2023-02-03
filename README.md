@@ -16,6 +16,7 @@ email me at sgelman@nextpoorslob.com, and I'll prioritize it and contact you.
 3. Added Keycloak service
 4. Added realm and first user
 5. Todo add groups and additional users
+6. Todo add list of endpoints to use and test.
 
 ## To Run
 

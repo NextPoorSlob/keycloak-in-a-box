@@ -25,8 +25,6 @@ services:
     container_name: local_keycloak
     volumes:
       - ./imports:/opt/jboss/keycloak/imports
-#    command:
-#      - "-b 0.0.0.0 -Dkeycloak.import=/opt/jboss/keycloak/imports/realm-test.json"
     environment:
       KEYCLOAK_IMPORT: /opt/jboss/keycloak/imports/realm-test.json -Dkeycloak.profile.feature.upload_scripts=enabled
       DB_VENDOR: postgres
