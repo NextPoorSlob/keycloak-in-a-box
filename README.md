@@ -6,6 +6,6 @@ contains a configured Test realm with an oidc-client. The client already has a n
 
 ## Current State
 1. Postgres database for Keycloak data.  This database maintains its data from run to run.
-2. Todo: Add network
+2. Added local-keycloak network.
 3. Todo: Add Keycloak service.
 4. Todo: preconfigure data
