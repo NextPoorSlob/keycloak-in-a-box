@@ -14,7 +14,8 @@ email me at sgelman@nextpoorslob.com, and I'll prioritize it and contact you.
 1. Postgres database for Keycloak data. This database maintains its data from run to run.
 2. Added local-keycloak network.
 3. Added Keycloak service
-4. Todo: preconfigure data
+4. Added realm and first user
+5. Todo add groups and additional users
 
 ## To Run
 
@@ -35,6 +36,14 @@ To reset the database:
 ```shell
 docker volume rm keycloak-in-a-box_postgres-data
 ```
+
+## Users
+
+The following users are preloaded:
+
+| User Name  | Password    |
+|------------|-------------|
+| john.smith | TastyFreeze |
 
 ## Apple Silicon (M1/M2)
 
