@@ -15,10 +15,31 @@ services:
     environment:
       POSTGRES_USER: ${DB_USERNAME:-postgres}
       POSTGRES_PASSWORD: ${DB_PASSWORD:-postgres}
-      POSTGRES_DB: ${DB_DB_NAME:-postgres}
+      POSTGRES_DB: ${DB_NAME:-postgres}
     networks:
       - local-keycloak
 
+  keycloak:
+    depends_on:
+      - postgres
+    container_name: local_keycloak
+    environment:
+      DB_VENDOR: postgres
+      DB_ADDR: postgres
+      DB_DATABASE: ${DB_NAME}
+      DB_USER: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+      KEYCLOAK_USER: admin
+      KEYCLOAK_PASSWORD: admin
+      KEYCLOAK_LOGLEVEL: debug
+      ROOT_LOGLEVEL: info
+    image: jboss/keycloak:${KEYCLOAK_VERSION}
+    ports:
+      - "6080:8080"
+      - "9990:9990"
+    restart: unless-stopped
+    networks:
+      - local-keycloak
 
 networks:
   local-keycloak: {}
